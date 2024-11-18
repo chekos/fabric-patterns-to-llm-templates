@@ -1,0 +1,37 @@
+[project]
+name = "fabric-to-llm-templates"
+version = "0.1.0"
+description = "Grab the patterns from `fabric` and set them up as templates for `llm`"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "llm>=0.18",
+    "pyyaml>=6.0.2",
+    "rich>=13.9.4",
+]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "C", # mccabe rules
+    "F", # pyflakes rules
+    "E", # pycodestyle error rules
+    "W", # pycodestyle warning rules
+    "B", # flake8-bugbear rules
+    "I", # isort rules
+]
+ignore = [
+    "C901", # max-complexity-10
+    "E501", # line-too-long
+]
+
+[tool.ruff.format]
+indent-style = "space"
+quote-style = "single"
+
+[tool.uv]
+dev-dependencies = [
+    "ruff>=0.7.4",
+]
